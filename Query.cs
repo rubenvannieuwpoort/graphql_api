@@ -1,20 +1,8 @@
 ﻿public class Query
 {
-    public Thing GetThing()
+    public List<Thing> GetThings([Service]Context context)
     {
-        return new Thing
-        {
-            Name = "Hello"
-        };
-    }
-
-    public List<Thing> GetThings()
-    {
-        return new List<Thing>
-        {
-            new Thing { Name = "Thing1" },
-            new Thing { Name = "Thing2" }
-        };
+        return context.Things.ToList();
     }
 }
 public class QueryType : ObjectType<Query>
@@ -22,11 +10,7 @@ public class QueryType : ObjectType<Query>
     protected override void Configure(IObjectTypeDescriptor<Query> descriptor)
     {
         descriptor
-            .Field(f => f.GetThing())
-            .Type<ThingType>();
-
-        descriptor
-            .Field(f => f.GetThings())
+            .Field(f => f.GetThings(default!))
             .Type<ListType<ThingType>>();
     }
 }
