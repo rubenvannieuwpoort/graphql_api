@@ -8,7 +8,6 @@ public class ThingType : ObjectType<Thing>
 {
     protected override void Configure(IObjectTypeDescriptor<Thing> descriptor)
     {
-        descriptor.BindFields(BindingBehavior.Explicit);
         descriptor.BindFieldsExplicitly();
 
         descriptor.Field(f => f.Name)
