@@ -1,13 +1,21 @@
-﻿/*public class Mutation
+﻿public class Mutation
 {
-    public async Task<BookPayload> AddBook(BookInput input)
+    public async Task<ThingPayload> AddThing(ThingInput input)
     {
-        var book = new Book { Title = input.title, Author = new Author { Name = input.author }  };
-        return new BookPayload(book);
+        Thing thing = new Thing() { Name = input.Naam };
+        return new ThingPayload(thing);
     }
 }
 
-public record BookPayload(Book? record, string? error = null);
+public record ThingInput(string Naam);
 
-public record BookInput(string title, string author);
-*/
+public record ThingPayload(Thing? record, string? error = null);
+
+public class MutationType : ObjectType<Mutation>
+{
+    protected override void Configure(
+        IObjectTypeDescriptor<Mutation> descriptor)
+    {
+        descriptor.Field(f => f.AddThing(default!));
+    }
+}
