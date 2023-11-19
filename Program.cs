@@ -6,8 +6,7 @@ builder.Services.AddDbContext<Context>(options => options.UseSqlite("Data Source
 
 builder.Services
     .AddGraphQLServer()
-    //.AddMutationType<Mutation>()
-    .AddQueryType<Query>();
+    .AddQueryType<QueryType>();
 
 var app = builder.Build();
 
