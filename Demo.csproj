@@ -8,15 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="HotChocolate.AspNetCore" Version="13.7.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="GraphQL\" />
   </ItemGroup>
 
 </Project>
