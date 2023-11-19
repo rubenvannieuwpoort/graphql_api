@@ -1,4 +1,4 @@
-﻿public class Mutation
+﻿/*public class Mutation
 {
     public async Task<BookPayload> AddBook(BookInput input)
     {
@@ -10,3 +10,4 @@
 public record BookPayload(Book? record, string? error = null);
 
 public record BookInput(string title, string author);
+*/
