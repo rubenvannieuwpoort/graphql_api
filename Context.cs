@@ -1,7 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 
-class Context : DbContext
+public class Context : DbContext
 {
     public DbSet<Thing> Things { get; set; }
 
