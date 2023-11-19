@@ -7,6 +7,15 @@
             Name = "Hello"
         };
     }
+
+    public List<Thing> GetThings()
+    {
+        return new List<Thing>
+        {
+            new Thing { Name = "Thing1" },
+            new Thing { Name = "Thing2" }
+        };
+    }
 }
 public class QueryType : ObjectType<Query>
 {
@@ -15,5 +24,9 @@ public class QueryType : ObjectType<Query>
         descriptor
             .Field(f => f.GetThing())
             .Type<ThingType>();
+
+        descriptor
+            .Field(f => f.GetThings())
+            .Type<ListType<ThingType>>();
     }
 }
